@@ -9,15 +9,14 @@ The main files that build up the project are:
 - [**_Maze.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/Maze.h): class that represents the maze, containing a matrix of tiles.
 - [**_main.cpp_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/main.cpp): the entry point of the program, contains an instance of the class **Maze** and the call of its method for the execution of the random maze generation algorithm.
 
-[**_Graphic.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/Graphic.h), [**_GraphicState.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/GraphicState.h), [**_MenuLoop.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/MenuLoop.h) and [**_Game.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/Game are respectively used 
+[**_Graphic.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/Graphic.h), [**_GraphicState.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/GraphicState.h), [**_MenuLoop.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/MenuLoop.h) and [**_Game.h_**](https://github.com/LeoGori/RandomMazeGeneration/blob/main/Game.h) are respectively used for the graphic presentation of the maze generation.
 
 # Language and APIs
 The code is entirely written in C++ programming language, with the use of the following libraries and APIs (omitting the standard ones):
 
-- [**_random_**](https://www.cplusplus.com/reference/random/): used for the random generation of sequences and the random definition of state transition probabilities
-- [**_chrono_**](https://www.cplusplus.com/reference/algorithm/): used for the shuflling of sequences, used for randomization purposes
-- [**_vector_**](https://www.openmp.org/): used in [**_PairHMM.cpp_**](https://github.com/LeoGori/HMM4GA/blob/main/PairHMM.cpp) for introducing thread level computation in the algorithm
-- [**_SFML_**](https://www.openmp.org/): used in [**_PairHMM.cpp_**](https://github.com/LeoGori/HMM4GA/blob/main/PairHMM.cpp) for introducing thread level computation in the algorithm
+- [**_random_**](https://www.cplusplus.com/reference/random/): used for the random selection of wall to be removed inside the maze
+- [**_chrono_**](https://www.cplusplus.com/reference/chrono/): used for the presentation of the maze generation
+- [**_SFML_**](https://www.sfml-dev.org/) graphic library
 
 
 # How to run the code (Windows)
@@ -39,5 +38,5 @@ The code is entirely written in C++ programming language, with the use of the fo
 ```
 6. run the program
 ```
-  ./HMM4GA.exe
+  ./MazeRandomGeneration.exe
 ```
