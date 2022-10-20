@@ -1,7 +1,3 @@
-//
-// Created by leogori on 21/12/18.
-//
-
 #ifndef MAZERANDOMGENERATION_GRAPHICSTATE_H
 #define MAZERANDOMGENERATION_GRAPHICSTATE_H
 
