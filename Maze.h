@@ -1,7 +1,3 @@
-//
-// Created by leogori on 03/04/19.
-//
-
 #ifndef PROJECT_TILEBOSSMAP_H
 #define PROJECT_TILEBOSSMAP_H
 
