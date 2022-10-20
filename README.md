@@ -1,4 +1,4 @@
-# RandomMazeGeneration
+# Random Maze Generation
 This repo contains the source files for the random generation of a maze through the use of Disjoint Set data structures, implemented using union by rank and path compression techniques.
 
 
