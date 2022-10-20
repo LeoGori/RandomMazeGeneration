@@ -38,5 +38,5 @@ The code is entirely written in C++ programming language, with the use of the fo
 ```
 6. run the program
 ```
-  ./MazeRandomGeneration.exe
+  ./RandomMazeGeneration.exe
 ```
