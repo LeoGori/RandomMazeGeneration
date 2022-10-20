@@ -1,7 +1,3 @@
-//
-// Created by Leonardo on 16/10/22.
-//
-
 #ifndef MAZE_RANDOM_GENERATION_TILE_H
 #define MAZE_RANDOM_GENERATION_TILE_H
 
