@@ -24,9 +24,3 @@ if(SFML_FOUND)
     message(STATUS "SFML_VERSION: ${SFML_VERSION}")
     target_link_libraries(${EXECUTABLE_NAME} sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
 endif()
-
-########GOOGLE TEST###########
-#include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} ../include)
-#add_subdirectory(test)
-#add_library(core ${SOURCE_FILE})
-#target_link_libraries(Project core)
