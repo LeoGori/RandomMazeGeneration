@@ -1,7 +1,3 @@
-//
-// Created by leogori on 03/04/19.
-//
-
 #include "Maze.h"
 #include <cmath>
 #include <sstream>
@@ -12,6 +8,10 @@ Maze::Maze(Vector2i size) {
     this->size = size;
     setWall(42);
     setFloor(111);
+    setJunctionWall(409);
+    setStartPos(30);
+    setEndPos(31);
+    wallPositionIndex = 0;
 }
 
 bool Maze::load(const std::string &tileset, sf::Vector2u tileSize) {
@@ -84,23 +84,32 @@ void Maze::draw(RenderWindow &window) {
 
 void Maze::setTileMap() {
 
-    string line;
+    // initialize the maze
+
     vector <Tile> lineTiles;
     Tile tile;
 
     for(int i=0;i<size.y;i++){
         for(int j=0;j<size.x;j++){
             if(i % 2 == 0) {
-                if (j % 2 == 0)
+                if (j % 2 == 0) {
                     tile.setValue(floor);
-                else
+                }
+                else {
                     tile.setValue(wall);
+                    wallPositions.emplace_back(j, i);
+                }
             }
-            else
-                tile.setValue(wall);
-
+            else {
+                if (i % 2 != 0 && j % 2 != 0) {
+                    // value of the junction wall
+                    tile.setValue(junctionWall);
+                } else {
+                    tile.setValue(wall);
+                    wallPositions.emplace_back(j, i);
+                }
+            }
             lineTiles.push_back(tile);
-
         }
         tiles.push_back(lineTiles);
         lineTiles.clear();
@@ -108,6 +117,10 @@ void Maze::setTileMap() {
 
     tiles[0][0].setValue(startPosition);
     tiles[size.y - 1][size.x - 1].setValue(endPosition);
+
+    std::random_device rd;
+    auto rng = std::default_random_engine { rd() };
+    std::shuffle(std::begin(wallPositions), std::end(wallPositions), rng);
 
 }
 
@@ -192,37 +205,34 @@ vector<Vector2i> Maze::getWallNeighboursPos(Vector2i wallPos) {
     return wallNeighboursPos;
 }
 
-unsigned int Maze::getFloor() {
+int Maze::getFloor() {
     return floor;
 }
 
 Vector2i Maze::getRandomWall() {
-
-    unsigned seed = static_cast<unsigned int>(chrono::system_clock::now().time_since_epoch().count());
-
-    default_random_engine generator(seed);
-    uniform_int_distribution<int> widthDistribution(0, size.x - 1);
-
-    uniform_int_distribution<int> heightDistribution(0, size.y - 1);
-
-    Vector2i pos;
-
-    int x, y;
-
-    do {
-
-        x = widthDistribution(generator);
-        y = heightDistribution(generator);
-
-        // cout << x << ", " << y << endl;
-
-        pos = Vector2i(x, y);
-
-    } while (! isWall(pos) || (x % 2 != 0 && y % 2 != 0));
-
-    return pos;
+    return wallPositions[wallPositionIndex ++];
 }
 
+void Maze::setJunctionWall(int junctWall) {
+    junctionWall = junctWall;
+}
 
+int Maze::getJunctionWall() {
+    return junctionWall;
+}
 
+void Maze::setStartPos(int startPos) {
+    startPosition = startPos;
+}
 
+int Maze::getStartPos() {
+    return startPosition;
+}
+
+void Maze::setEndPos(int endPos) {
+    endPosition = endPos;
+}
+
+int Maze::getEndPos() {
+    return endPosition;
+}

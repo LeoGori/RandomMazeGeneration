@@ -1,3 +1,7 @@
+//
+// Created by leogori on 03/04/19.
+//
+
 #ifndef PROJECT_TILEBOSSMAP_H
 #define PROJECT_TILEBOSSMAP_H
 
@@ -36,7 +40,7 @@ public:
 
     void setFloor(int floor);
 
-    unsigned int getFloor();
+    int getFloor();
 
     bool find(Vector2i tileCoords1, Vector2i tileCoords2);
 
@@ -46,19 +50,37 @@ public:
 
     Vector2i getRandomWall();
 
+    void setJunctionWall(int junctWall);
+
+    int getJunctionWall();
+
+    void setStartPos(int startPos);
+
+    int getStartPos();
+
+    void setEndPos(int endPos);
+
+    int getEndPos();
+
 protected:
 
     Sprite sprite;
 
-    unsigned int wall;
+    int wall;
 
-    unsigned int floor;
+    int floor;
 
-    unsigned int startPosition = 30;
+    int junctionWall;
 
-    unsigned int endPosition = 31;
+    int startPosition;
+
+    int endPosition;
 
     Vector2i size;
+
+    vector<Vector2i> wallPositions;
+
+    int wallPositionIndex;
 
     sf::VertexArray m_vertices;
 
