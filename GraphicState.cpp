@@ -1,7 +1,3 @@
-//
-// Created by leogori on 21/12/18.
-//
-
 #include "GraphicState.h"
 
 
