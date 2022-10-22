@@ -17,3 +17,6 @@ The code is entirely written in C++ programming language, with the use of the fo
 - [**_random_**](https://www.cplusplus.com/reference/random/): used for the random selection of wall to be removed inside the maze
 - [**_chrono_**](https://www.cplusplus.com/reference/chrono/): used for the presentation of the maze generation
 - [**_SFML_**](https://www.sfml-dev.org/) 2.5.0 graphic library
+
+# Benchmarking
+Checkout the benchmaks of the implementation [here](https://colab.research.google.com/drive/1kLGa8e6yBhUF3DqU0ZwF65sBCby3ecHZ?usp=sharing)!
