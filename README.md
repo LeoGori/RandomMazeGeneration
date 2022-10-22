@@ -19,4 +19,7 @@ The code is entirely written in C++ programming language, with the use of the fo
 - [**_SFML_**](https://www.sfml-dev.org/) 2.5.0 graphic library
 
 # Benchmarking
-Checkout the benchmaks of the implementation [here](https://colab.research.google.com/drive/1kLGa8e6yBhUF3DqU0ZwF65sBCby3ecHZ?usp=sharing)!
+Checkout the benchmarks of the implementation [here](https://colab.research.google.com/drive/1kLGa8e6yBhUF3DqU0ZwF65sBCby3ecHZ?usp=sharing)!
+
+# Preview
+https://user-images.githubusercontent.com/29440123/197364212-2fe21392-25e5-48fd-a3a6-ff679d304a42.mp4
